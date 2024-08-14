@@ -1,0 +1,38 @@
+from collections import namedtuple
+
+Flag = namedtuple('Flag', ['key', 'name'])
+
+BASE_FLAGS = [
+    Flag("fi.storeConfig.marketScan.accountNumber", "Market Scan Account Number"),
+    Flag("fuseapp.storeConfig.desking.creditScores", "Credit Scores in Desking"),
+    Flag("fuseapp.storeConfig.desking.creditApplicationAllowed", "Credit Application Allowed"),
+    Flag("fuseapp.storeConfig.desking.otherFeesExpansion", "Other Fees Expansion"),
+    Flag("fuseapp.storeConfig.desking.allowApplicationReview", "Allow Application Review"),
+    Flag("fuseapp.storeConfig.desking.isProtectionProductsColumnMenuEnabled", "Protection Products Column Menu Enabled"),
+    Flag("fuseapp.Inventory.allowGroupVehiclesByType", "Allow Group Vehicles by Type"),
+    Flag("fuseapp.storeConfig.desking.skipKBB", "Skip KBB"),
+    Flag("fuseapp.storeConfig.showUsersPage", "Show Users Page"),
+    Flag("fuseapp.storeConfig.rates.includeFlatRatesPrograms", "Include Flat Rates Programs"),
+    Flag("fuseapp.storeConfig.desking.protectionProductsFAndIIgnoredTrees", "Protection Products F&I Ignored Trees"),
+    Flag("fuseapp.storeConfig.desking.allowManualCalc", "Allow Manual Calculation"),
+    Flag("fuseapp.storeConfig.desking.protectionProductsMenuInDesking", "Protection Products Menu in Desking"),
+    Flag("fuseapp.storeConfig.rates.securityDeposit", "Security Deposit"),
+    Flag("fuseapp.storeConfig.desking.daysToFirstPaymentByDealType", "Days to First Payment by Deal Type"),
+    Flag("fuseapp.storeConfig.desking.showBasePayment", "Show Base Payment"),
+    Flag("fuseapp.Inventory.allowExternalVehicle", "Allow External Vehicle"),
+    Flag("fuseapp.storeConfig.desking.review.dealPolicy", "Deal Policy (WhyBuyURL)"),
+    Flag("fuseapp.storeConfig.desking.cashDown", "Cash Down"),
+    Flag("fuseapp.storeConfig.desking.deskingTypes", "Desking Types"),
+    Flag("fuseapp.storeConfig.desking.leaseTerms", "Lease Terms"),
+    Flag("fuseapp.storeConfig.desking.financeTerms", "Finance Terms"),
+    Flag("fuseapp.storeConfig.desking.leaseMileage", "Lease Mileage"),
+    Flag("fuseapp.storeConfig.showUsersPage", "Show Users Page (DEALER ADMIN ONLY)"),
+    Flag("fuseapp.storeConfig.supportDealRecap", "Support Deal Recap"),
+    Flag("fuseapp.storeConfig.desking.useNewDecisionFlow", "Use New Decision Flow"),
+    Flag("fuseapp.storeConfig.desking.allowDisclosuresAfterRemoteCreditApplication", "Allow Disclosures After Remote Credit Application"),
+    Flag("fuseapp.storeConfig.deal.disclosureSignRemotely", "Disclosure Sign Remotely"),
+    Flag("fuseapp.storeConfig.deal.creditApplicationSignRemotely", "Credit Application Sign Remotely"),
+    Flag("fuseapp.storeConfig.documents.showNumbersVerification", "Show Numbers Verification"),
+    Flag("fi.storeConfig.rates.totalNonCaptiveLenders", "Total Non-Captive Lenders"),
+    Flag("fuseapp.storeConfig.deal.allowAddingManualProtectionProducts", "Allow Adding Manual Protection Products"),
+]
