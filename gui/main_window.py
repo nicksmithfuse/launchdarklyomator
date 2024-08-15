@@ -9,6 +9,13 @@ from launchdarkly.api_client import LaunchDarklyAPIClient
 from config.flag_definitions import desking_flags, desking_plus_flags, e2e_flags
 from launchdarkly.flag_handlers import get_handler
 
+
+import sys
+import traceback
+import logging
+
+logger = logging.getLogger(__name__)
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -87,6 +94,11 @@ class MainWindow(QMainWindow):
         self.current_flags = []
         self.current_flag_index = -1
 
+    def handle_exception(self, exc_type, exc_value, exc_traceback):
+        error_message = ''.join(traceback.format_exception(exc_type, exc_value, exc_traceback))
+        logger.critical("Unhandled exception: %s", error_message)
+        self.log_message(f"Critical Error: {error_message}")
+        QMessageBox.critical(self, "Critical Error", f"An unhandled exception occurred:\n{error_message}")
     def connect_to_launchdarkly(self):
         try:
             environment = self.environment_dropdown.currentText().lower()
@@ -117,29 +129,47 @@ class MainWindow(QMainWindow):
             self.flag_list.addItem(flag.name)
 
     def on_flag_selected(self, item):
-        flag_name = item.text()
-        flag = next((f for f in self.current_flags if f.name == flag_name), None)
-        if flag:
-            self.display_flag_config(flag)
+        try:
+            flag_name = item.text()
+            self.log_message(f"Flag selected: {flag_name}")
+            flag = next((f for f in self.current_flags if f.name == flag_name), None)
+            if flag:
+                self.log_message(f"Displaying configuration for flag: {flag.key}")
+                self.display_flag_config(flag)
+            else:
+                self.log_message(f"No flag found with name: {flag_name}")
+        except Exception as e:
+            error_message = f"Error in on_flag_selected: {str(e)}"
+            logger.error(error_message)
+            logger.error(traceback.format_exc())
+            self.log_message(error_message)
 
     def display_flag_config(self, flag):
-        while self.flag_config_section.count():
-            self.flag_config_section.removeWidget(self.flag_config_section.widget(0))
+        try:
+            while self.flag_config_section.count():
+                self.flag_config_section.removeWidget(self.flag_config_section.widget(0))
 
-        flag_widget = QWidget()
-        layout = QVBoxLayout(flag_widget)
+            flag_widget = QWidget()
+            layout = QVBoxLayout(flag_widget)
 
-        layout.addWidget(QLabel(f"Flag Name: {flag.name}"))
-        layout.addWidget(QLabel(f"Flag Key: {flag.key}"))
+            layout.addWidget(QLabel(f"Flag Name: {flag.name}"))
+            layout.addWidget(QLabel(f"Flag Key: {flag.key}"))
 
-        handler = get_handler(flag.key)
-        if handler:
-            handler(self, layout, self.ld_client, flag.key, flag.name, None)  # Pass self.ld_client here
-        else:
-            layout.addWidget(QLabel("Configuration for this flag is not yet implemented."))
+            handler = get_handler(flag.key)
+            if handler:
+                self.log_message(f"Calling handler for flag: {flag.key}")
+                handler(self, layout, self.ld_client, flag.key, flag.name, None)
+            else:
+                self.log_message(f"No handler implemented for flag: {flag.key}")
+                layout.addWidget(QLabel("Configuration for this flag is not yet implemented."))
 
-        self.flag_config_section.addWidget(flag_widget)
-        self.flag_config_section.setCurrentWidget(flag_widget)
+            self.flag_config_section.addWidget(flag_widget)
+            self.flag_config_section.setCurrentWidget(flag_widget)
+        except Exception as e:
+            error_message = f"Error in display_flag_config: {str(e)}"
+            logger.error(error_message)
+            logger.error(traceback.format_exc())
+            self.log_message(error_message)
 
     def log_message(self, message):
         self.log_window.append(message)

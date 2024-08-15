@@ -4,37 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69536c7a-a835-4b0e-8d2d-bf68f47fca1a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/LaunchDarklyOmator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/flag_definitions/base_flags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/flag_definitions/desking_flags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/flag_definitions/desking_plus_flags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/flag_definitions/dr_flags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/flag_definitions/e2e_flags.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/components/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/components/checkbox.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/components/dropdown.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/components/file_upload.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/api_client.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/flag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/flag_handlers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/flag_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/launchdarkly/handlers/market_scan_account_handler.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/csv_parser.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/error_handler.py" afterDir="false" />
+    <list default="true" id="69536c7a-a835-4b0e-8d2d-bf68f47fca1a" name="Changes" comment="initial commit way too late i guess">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gui/main_window.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/main_window.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/launchdarkly/handlers/market_scan_account_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/launchdarkly/handlers/market_scan_account_handler.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +89,19 @@
       <option name="presentableId" value="Default" />
       <updated>1722181148521</updated>
     </task>
+    <task id="LOCAL-00001" summary="initial commit way too late i guess">
+      <option name="closed" value="true" />
+      <created>1723669518472</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1723669518473</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="initial commit way too late i guess" />
+    <option name="LAST_COMMIT_MESSAGE" value="initial commit way too late i guess" />
   </component>
 </project>
